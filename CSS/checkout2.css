@@ -1,0 +1,77 @@
+/* CSS/checkout2.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+h2 {
+    color: #2D99AE;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+h3 font {
+    font-weight: bold;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.order-table th,
+.order-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.order-header {
+    background-color: #2D99AE;
+    color: white;
+}
+
+.order-row td a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.order-row td a:hover {
+    text-decoration: underline;
+}
+
+.order-footer {
+    background-color: #f1fdfd;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.order-empty {
+    padding: 20px;
+    text-align: center;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    color: #4caf50;
+    margin-top: 20px;
+}
+
+p strong {
+    font-size: 18px;
+}

@@ -1,0 +1,140 @@
+/* CSS/mycart.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    color: #333;
+}
+
+h2 {
+    color: #2D99AE;
+    margin-bottom: 20px;
+}
+
+.cart-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-header {
+    background-color: #2D99AE;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+}
+
+.cart-header th,
+.cart-row td,
+.cart-total-row td,
+.empty-cart-row td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.cart-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-row a {
+    color: #2D99AE;
+    text-decoration: none;
+}
+
+.cart-row a:hover {
+    text-decoration: underline;
+}
+
+.input-qty {
+    width: 60px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.input-qty:focus {
+    border-color: #2D99AE;
+    outline: none;
+}
+
+.cancel-btn {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #d81b60;
+}
+
+.cart-total-row {
+    background-color: #f1faff;
+    font-weight: bold;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.empty-cart-row td {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    padding: 20px;
+}
+
+.cart-actions {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.update-btn,
+.checkout-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.update-btn {
+    background-color: #2D99AE;
+}
+
+.update-btn:hover {
+    background-color: #237c8b;
+}
+
+.checkout-btn {
+    background-color: #4caf50;
+}
+
+.checkout-btn:hover {
+    background-color: #43a047;
+}

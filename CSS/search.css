@@ -1,0 +1,130 @@
+/* CSS/search.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  color: #2D99AE;
+  margin-bottom: 20px;
+}
+
+.category-select {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+}
+
+.category-select label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.category-select select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.category-select select:focus {
+  border-color: #2D99AE;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-header {
+  background-color: #2D99AE;
+  color: #fff;
+  font-size: 15px;
+  text-align: left;
+}
+
+.product-header th {
+  padding: 14px;
+}
+
+.product-row td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.product-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-row a {
+  text-decoration: none;
+  color: #2D99AE;
+  font-weight: bold;
+}
+
+.product-row a:hover {
+  text-decoration: underline;
+}
+
+.buy-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #43a047;
+}
+
+.empty-product-row td {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #888;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.pagination a {
+  color: #2D99AE;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.pagination a:hover {
+  color: #e91e63;
+}
+
+.total-count {
+  color: #e91e63;
+  font-weight: bold;
+}

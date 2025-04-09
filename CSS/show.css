@@ -1,0 +1,104 @@
+/* CSS/show.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 20px;
+}
+
+.product-detail-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+
+h2 {
+  color: #2D99AE;
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.product-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-detail-table th {
+  width: 30%;
+  text-align: center;
+  padding: 12px;
+  background-color: white;
+  color: #555;
+}
+
+.product-detail-table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.product-detail-table img.product-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.recommended {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: #e91e63;
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-right: 10px;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  background-color: #2D99AE;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #247e94;
+}
+
+.buy-image {
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.buy-image:hover {
+  transform: scale(1.1);
+}
