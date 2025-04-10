@@ -1,0 +1,24 @@
+/* Style for the footer content */
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px;  
+}
+
+/* Style for the login button */
+.login-button {
+    display: inline-block;
+    padding: 8px 16px; 
+    background-color: #00c4b4; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the login button */
+.login-button:hover {
+    background-color: #009688; 
+}

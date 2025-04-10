@@ -63,7 +63,6 @@ while ($row = mysqli_fetch_array($result)) {
   while ($row2 = mysqli_fetch_array($result2)) {
 ?>
   <tr class="product-row">
-    <td class="product-id"><?php echo $row2['product_id'] ?></td>
     <td class="product-info">
     <?php if ($row2['is_commend']) { ?>
       <img src="img/star.gif" class="star-icon">

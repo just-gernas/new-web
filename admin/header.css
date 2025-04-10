@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+    background-color: #fff;
+    font-size: 15spx;
+    margin-left: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+p {
+    text-align: left;
+}
+
+a {
+    color: #336699;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1c5d8c;
+    text-decoration: underline;
+}
+
+caption {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* table format */
+table.main {
+    background: #999;
+    border: 0;
+    font-size: 12px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.main td {
+    background-color: #FEFEFE;
+    padding: 5px 8px;
+    height: 20px;
+}
+
+table.main th {
+    background-color: #CCCCCC;
+    padding-top: 4px;
+    height: 22px;
+    text-align: left;
+}
+
+div.btnInsert {
+    float: left;
+    width: 150px;
+    border: #336699 solid 1px;
+    padding: 5px 0;
+    background: #EFEFEF;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+div.btnInsert:hover {
+    background-color: #d0e0f0;
+    cursor: pointer;
+}
+
+div.submit {
+    text-align: center;
+    padding-top: 20px;
+    height: 32px;
+}
+
+div.error {
+    text-align: left;
+    background: #FFFFCC;
+    border: #FF0000 solid 1px;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 4px;
+}

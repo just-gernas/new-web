@@ -62,6 +62,7 @@ if (isset($_POST['submit'])) {
             $_POST['product_name'],
             $_POST['price'],
             $_POST['detail'],
+            // isset($_POST['is_commend']) ? 1 : 0,
             $_POST['is_commend'] ? 1 : 0,
             $photo_name,
             $product_id
