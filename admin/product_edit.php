@@ -48,33 +48,42 @@ if (isset($_POST['submit'])) {
     $has_error = !empty($error_msg);
 
     if (!$has_error) {
-        $sql = "UPDATE products SET
-                category_id = ?,
-                product_name = ?,
-                price = ?,
-                detail = ?,
-                is_commend = ?,
-                photo = ?
-                WHERE product_id = ?";
-        $stmt = mysqli_prepare($db, $sql);
-        mysqli_stmt_bind_param($stmt, "isdsssi",
-            $_POST['category_id'],
-            $_POST['product_name'],
-            $_POST['price'],
-            $_POST['detail'],
-            // isset($_POST['is_commend']) ? 1 : 0,
-            $_POST['is_commend'] ? 1 : 0,
-            $photo_name,
-            $product_id
-        );
-        mysqli_stmt_execute($stmt);
-
-        if (mysqli_stmt_affected_rows($stmt) >= 0) {
-            ExitMessage("Product updated successfully", "product.php?catid=" . $_POST['category_id']);
-        } else {
-            ExitMessage("Failed to update product");
-        }
-    }
+      $sql = "UPDATE products SET
+              category_id = ?,
+              product_name = ?,
+              price = ?,
+              detail = ?,
+              is_commend = ?,
+              photo = ?
+              WHERE product_id = ?";
+      $stmt = mysqli_prepare($db, $sql);
+  
+      // Tách dữ liệu thành biến
+      $category_id = $_POST['category_id'];
+      $product_name = $_POST['product_name'];
+      $price = $_POST['price'];
+      $detail = $_POST['detail'];
+      $is_commend = isset($_POST['is_commend']) ? 1 : 0;
+      $product_id = intval($_POST['product_id']);
+  
+      mysqli_stmt_bind_param($stmt, "isdsssi",
+          $category_id,
+          $product_name,
+          $price,
+          $detail,
+          $is_commend,
+          $photo_name,
+          $product_id
+      );
+  
+      mysqli_stmt_execute($stmt);
+  
+      if (mysqli_stmt_affected_rows($stmt) >= 0) {
+          ExitMessage("Product updated successfully", "product.php?catid=" . $category_id);
+      } else {
+          ExitMessage("Failed to update product");
+      }
+  }
 } else {
     // Load product to prefill the form
     $stmt = mysqli_prepare($db, "SELECT * FROM products WHERE product_id = ?");

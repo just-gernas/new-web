@@ -7,9 +7,9 @@ include "config.inc.php";     // config
 include "header.inc.php";     // header
 
 
-$session_id = session_id();   // current user ID
+$session_id = session_id();   // ID user hiện tại
 
-// get cart info
+// Lấy dữ liệu cart từ CSDL
 $stmt = mysqli_prepare($db, "
     SELECT s.*, s.number * p.price AS amount, 
            p.product_id, p.product_name, p.price, p.photo 
@@ -23,7 +23,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 $numrows = mysqli_num_rows($result);
 
-// if no records, go back to cart
+// Giỏ hàng rỗng -> quay lại mycart
 if ($numrows === 0) {
     header("Location: mycart.php");
     exit();
@@ -33,6 +33,8 @@ if ($numrows === 0) {
 <!-- Link tới file CSS -->
 <link rel="stylesheet" href="CSS/checkout.css">
 
+
+<!-- Check bỏ trống ô quan trọng -->
 <script>
 function checkit(form) {
     if (form.user_name.value.trim() === '') {
@@ -48,6 +50,7 @@ function checkit(form) {
 }
 </script>
 
+<!-- Form điền thông tin -->
 <form action="checkout2.php" method="POST" onsubmit="return checkit(this)">
     <h2>Personal Information</h2>
     <table class="form-table">
@@ -86,6 +89,8 @@ function checkit(form) {
     </p>
 </form>
 
+
+<!-- Giỏ hàng -->
 <h2>Cart</h2>
 <table class="cart-table">
     <tr>
@@ -94,6 +99,8 @@ function checkit(form) {
         <th>Quantity</th>
         <th>Amount</th>
     </tr>
+
+    <!-- Hiển thị sản phẩm -->
     <?php
     $total_price = 0;
     while ($data = mysqli_fetch_assoc($result)) {
