@@ -24,6 +24,7 @@ $session_id = session_id();
       <th>Action</th>
     </tr>
 
+  <!-- Truy vấn dữ liệu cart -->
 <?php
 $stmt = mysqli_prepare($db, "
   SELECT s.number, s.number * p.price AS amount,
@@ -34,9 +35,9 @@ $stmt = mysqli_prepare($db, "
   ORDER BY p.product_name DESC
 ");
 
-mysqli_stmt_bind_param($stmt, "s", $session_id);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
+mysqli_stmt_bind_param($stmt, "s", $session_id); 
+mysqli_stmt_execute($stmt); 
+$result = mysqli_stmt_get_result($stmt); 
 
 if (mysqli_num_rows($result) > 0) {
   $total_price = 0;

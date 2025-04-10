@@ -6,9 +6,9 @@
 include "config.inc.php";    // config
 include "header.inc.php";    // header
 $session_id = session_id();
-$order_id = time();
+$order_id = time(); // id sử dụng timestamp 
 
-// Sanitize user input
+// xử lí thông tin người dùng nhập
 $user_name = trim($_POST['user_name']);
 $email     = trim($_POST['email']);
 $postcode  = trim($_POST['postcode']);
@@ -33,6 +33,7 @@ $address   = $address1 . ' ' . $address2;
     <th>Amount</th>
   </tr>
 
+<!-- Hiển thị table danh sách sp -->
 <?php
 $stmt = mysqli_prepare($db, "
     SELECT s.*, s.number * p.price AS amount, 
@@ -66,6 +67,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php
     }
 ?>
+    <!-- Hiển thị tổng tiền -->
     <tr class="order-footer">
         <td colspan="3" align="right"><strong>Total Price</strong></td>
         <td><strong><?php echo MoneyFormat($total_price); ?> $</strong></td>
@@ -78,7 +80,7 @@ if (mysqli_num_rows($result) > 0) {
 </table>
 
 <?php
-// Save order to database
+// Lưu thông tin vào database
 if ($total_price > 0) {
     $stmt = mysqli_prepare($db, "
         INSERT INTO orders 
@@ -95,7 +97,7 @@ if ($total_price > 0) {
         echo "<p><strong>❌ Failed to save the order.</strong></p>";
     }
 }
-
+//làm mới giỏ hàng
 session_regenerate_id(true);
 $new_sessionid = session_id();
 

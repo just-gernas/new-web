@@ -16,6 +16,7 @@ $category_id = intval($_GET['catid'] ?? 0);
 
 <h2>Products List</h2>
 
+<!-- Chọn danh mục -->
 <label for="catid">Select product category:</label>
 <select name="catid" id="catid" onchange="location='?catid='+this.value">
   <option value="0">Select product category</option>
@@ -32,7 +33,7 @@ $category_id = intval($_GET['catid'] ?? 0);
     <th>Action</th>
   </tr>
   <?php
-  // total product count
+  // đếm tổng số sp
   $stmt = mysqli_prepare($db, "SELECT COUNT(*) FROM products WHERE category_id=?");
   mysqli_stmt_bind_param($stmt, "i", $category_id);
   mysqli_stmt_execute($stmt);
@@ -43,6 +44,7 @@ $category_id = intval($_GET['catid'] ?? 0);
   if ($offset < 0) $offset = 0;
   if ($offset > $total) $offset = $total;
 
+  //lấy danh sách sp
   $stmt = mysqli_prepare($db, "SELECT product_id, product_name, photo, price 
                                FROM products 
                                WHERE category_id=? 
@@ -59,6 +61,8 @@ $category_id = intval($_GET['catid'] ?? 0);
       $price = MoneyFormat($data['price']);
       $photo = $data['photo'] ? $data['photo'] : 'default.gif';
   ?>
+
+  <!-- hiển thị danh sách sp -->
   <tr class="product-row">
     <td><img src="uploads/<?php echo htmlspecialchars($photo); ?>" class="product-img" alt="Product"></td>
     <td>
@@ -86,6 +90,7 @@ $category_id = intval($_GET['catid'] ?? 0);
   Total: <span class="highlight"><?php echo $total ?></span> records —
   <b>
     <?php
+    //phân trang
     $last_offset = $offset - $each_page;
     if ($last_offset < 0) {
       echo "Previous";

@@ -16,7 +16,7 @@ $sql = "SELECT product_name, product_id, price, photo FROM products
         ORDER BY is_commend DESC, post_datetime DESC LIMIT 5";
 $result = mysqli_query($db, $sql);
 ?>
-<!-- recommended begin -->
+<!-- hàng recommended -->
 <table class="product-table">
   <tr class="table-header">
   <?php
@@ -35,13 +35,14 @@ $result = mysqli_query($db, $sql);
   <?php } ?>
   </tr>
 </table>
-<!-- recommended end -->
 
+<!-- danhn sách sp -->
 <h2>Products list</h2>
 <?php
 $sql = "SELECT * FROM categories ORDER BY category_name";
 $result = mysqli_query($db, $sql);
 
+// loop hiển thị các danh mục
 while ($row = mysqli_fetch_array($result)) {
 ?>
 <table class="product-table">
@@ -60,6 +61,7 @@ while ($row = mysqli_fetch_array($result)) {
            ORDER BY is_commend DESC, post_datetime DESC LIMIT 5";
   $result2 = mysqli_query($db, $sql2);
 
+  // loop hiển thị sản phẩm trong danh mục
   while ($row2 = mysqli_fetch_array($result2)) {
 ?>
   <tr class="product-row">
